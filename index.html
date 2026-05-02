@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>사인 스나이퍼</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <h1>🎯 사인 스나이퍼</h1>
+      <p>사인법칙으로 표적 위치를 계산하고 명중시키세요</p>
+    </header>
+
+    <section class="hud">
+      <div class="hud-card">라운드 <span id="roundText">1</span></div>
+      <div class="hud-card">점수 <span id="scoreText">0</span></div>
+      <div class="hud-card">시간 <span id="timerText">45</span>s</div>
+    </section>
+
+    <canvas id="gameCanvas" width="360" height="520"></canvas>
+
+    <section class="panel">
+      <div id="missionText" class="mission"></div>
+
+      <div class="input-row">
+        <label>
+          ∠T
+          <input id="angleTInput" type="number" step="0.1" placeholder="도(°)" />
+        </label>
+
+        <label>
+          AT
+          <input id="distanceAInput" type="number" step="0.1" placeholder="거리" />
+        </label>
+      </div>
+
+      <div class="button-row">
+        <button id="checkBtn">계산 확인</button>
+        <button id="fireBtn" disabled>발사</button>
+        <button id="nextBtn" disabled>다음</button>
+      </div>
+
+      <p id="feedback" class="feedback">
+        AB와 두 각을 보고 ∠T와 AT를 구해보세요.
+      </p>
+    </section>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
